@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" >
+    
+    <title>Smit Patel</title>
+</head>
+<body style="display: grid;" >
+    <div class="togglenav" id="togglenav">
+        
+        <a  rel="noopener noreferrer" class="navsymbol" id="home-text" href="index.html"  ><i class="fa-solid fa-house" style="  padding: 10px 8px; border-radius: 50%;" ></i><p class="home-text">Home</p></a> 
+        <a  rel="noopener noreferrer" class="navsymbol" id="timeline-text" href="timeline.html" ><i class="fa-solid fa-user-graduate"></i><p class="timeline-text" style="top: 26%;">Timeline</p></a>
+        <a  rel="noopener noreferrer" class="navsymbol" id="skill-text" href="skills.html" ><i class="fa-solid fa-brain" style="color: #ffffff;"></i><p class="skill-text" style="top: 46%;">Skills</p></a>
+        <a  rel="noopener noreferrer" class="navsymbol" id="contact-text"  href="contact.html" ><i class="fa-solid fa-user" style="color: #ffffff;"></i><p class="contact-text" style="top: 66%;">Contact</p></a>
+        <!-- <a  rel="noopener noreferrer" type="button" onClick="Play()" class="navsymbol"   id="music" href="" ><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></a> -->
+        
+
+        <button  id="bounce" style="border-radius: 50%; " type="button" onClick="Play()"><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></button>
+    <audio controls id="audioval" style="display: none;">
+      <source src="music.mp3" type="audio/mp3">
+    </audio>
+         
+          
+    </div>
+    <nav class="navbar">
+        <p class="upper-online-text" style="padding-left: 15px;">  <span class="dot"></span>  Online.</p>
+        <div class="top-nav">
+        
+            <div class='open' id="open" onclick="openNav()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+            <div class='close' id="close" onclick="closeNav()"><i class="fa-solid fa-xmark" style="color: #fcfcfc;"></i></div>
+         
+        </div>
+    </nav>
+    <div class="contact-contaner">
+        <div class="form-container">
+          <div class="left-container">
+            <div class="left-inner-container">
+            <h2>Let's Chat</h2>
+            <p>Whether you have a question, want to start a conversation.</p>
+              <br>
+              <p>Feel free to send me a message in the contact form</p>
+          </div>
+            </div>
+          <div class="right-container">
+            <div class="right-inner-container">
+                <form action="https://formsubmit.co/psmit8320@gmail.com"  target="_blank" method="POST">
+                  <h2 class="lg-view">Contact</h2>
+                  <h2 class="sm-view">Let's Chat</h2>
+                 <!-- <p>* Required</p> -->
+                  <!-- <div class="social-container">
+                      <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                      <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                  </div> -->
+                <input type="text" name="name" placeholder="Name *"  />
+                <input type="email" name="Email" placeholder="Email *" />
+                <input type="text" name="Company" placeholder="Company" />
+                <input type="phone" name="phone" placeholder="Phone" />
+                <textarea rows="4" name="message" placeholder="Message"></textarea>
+                <button type="submit"  class="submit-button">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
