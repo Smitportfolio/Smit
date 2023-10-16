@@ -292,7 +292,7 @@ h1{
 }
 @media (max-width: 500px) {
   .buttons a{
-  font-size: 3vw;
+  font-size: 4vw;
   padding: 5px 5px 5px 5px;
   }
 }
