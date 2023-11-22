@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -13,16 +14,16 @@
     
     <title>Smit Patel</title>
 </head>
-<body id="body">
+<body>
 
-
+   
     <div class="togglenav" id="togglenav">
         
-        <a  rel="noopener noreferrer" class="navsymbol" id="home-text" href="#body"  ><i class="fa-solid fa-house" style="  padding: 10px 8px; border-radius: 50%;" ></i><p class="home-text">Home</p></a> 
+        <a  rel="noopener noreferrer" class="navsymbol" id="home-text" href="index.html"  ><i class="fa-solid fa-house" style="  padding: 10px 8px; border-radius: 50%;" ></i><p class="home-text">Home</p></a> 
         <a  rel="noopener noreferrer" class="navsymbol" id="timeline-text" href="#timeline-section" ><i class="fa-solid fa-user-graduate"></i><p class="timeline-text" style="top: 26%;">Timeline</p></a>
         <a  rel="noopener noreferrer" class="navsymbol" id="skill-text" href="#skills-section" ><i class="fa-solid fa-brain" ></i><p class="skill-text" style="top: 46%;">Skills</p></a>
         <a  rel="noopener noreferrer" class="navsymbol" id="contact-text"  href="#contact-section" ><i class="fa-solid fa-user" ></i><p class="contact-text" style="top: 66%;">Contact</p></a>
-        <a  rel="noopener noreferrer" class="navsymbol" id="contact-text"  href="#work-section" ><i class="fa-solid fa-briefcase"></i><p class="contact-text" style="top: 66%;">Work</p></a>
+        <a  rel="noopener noreferrer" class="navsymbol" id="contact-text"  href="#work-section" ><i class="fa-solid fa-briefcase"></i><p class="contact-text" style="top: 66%;">Contact</p></a>
         <!-- <a  rel="noopener noreferrer" type="button" onClick="Play()" class="navsymbol"   id="music" href="" ><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></a> -->
         
 
@@ -43,7 +44,7 @@
         </div>
     </nav>
     <section id="landing-page"  >
-        <article class="intro">
+        <article class="intro" data-aos="fade-in">
             <p class="online-text">
                 
             <span class="dot"></span>
@@ -53,13 +54,13 @@
 
             <div class="buttons-raw">
 
-                <div class="buttons">
+                <div class="buttons" data-aos="fade-left" data-aos-delay="600">
                     <a  rel="noopener noreferrer" class="linkedin" onclick="Privacy()" href="" ><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
                 </div>
-                <div class="buttons">
-                    <a  rel="noopener noreferrer" class="linkedin"  onclick="Privacy()" href="https://www.instagram.com/drx.smit.patel/" ><i class="fa-brands fa-instagram" ></i>Instagram</a>
+                <div class="buttons" data-aos="fade-left" data-aos-delay="900">
+                    <a  rel="noopener noreferrer" class="linkedin"  onclick="Privacy()" href="" ><i class="fa-brands fa-instagram" ></i>Instagram</a>
                 </div>
-                <div class="buttons">
+                <div class="buttons" data-aos="fade-left" data-aos-delay="1200">
                     <a  rel="noopener noreferrer" class="linkedin" onclick="Privacy()" href="" ><i class="fa-regular fa-envelope" ></i>Mail</a>
                 </div>
                 
@@ -77,17 +78,17 @@
         <h2>My Timeline</h2>
         <section class="timeline-section">
             <div class="timeline-items">
-                <div class="timeline-item">
+                <div class="timeline-item"  data-aos="fade-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2017</div>
-                    <div class="timeline-content">
+                    <div class="timeline-content" >
                         <h3>Secondary School</h3>
                         <p1>GSEB</p1>
                         <!-- <p2>Gujarat Secondary and Higher Secondary Education Board</p2> -->
                         <p>Percentile Rank-81.52%</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2018</div>
                     <div class="timeline-content">
@@ -97,7 +98,7 @@
                         <p>Percentile Rank-92.87%</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right"> 
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2019</div>
                     <div class="timeline-content">
@@ -106,7 +107,7 @@
                         <p>CGPA - 7.55</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2022</div>
                     <div class="timeline-content">
@@ -116,7 +117,7 @@
                         <p>Gujarat 380030</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2023</div>
                     <div class="timeline-content">
@@ -152,7 +153,7 @@
         <div class="Skill-container">
             <div class="services-inner">
               
-              <div class="services-box">
+              <div class="services-box" data-aos="flip-left" data-aos-delay="200">
                   <div class="skill-centre">
                       <span class="icon">
                           <i class="fas fa-paint-brush"></i>
@@ -161,7 +162,7 @@
                     </div>
               </div>
               
-              <div class="services-box">
+              <div class="services-box" data-aos="flip-left" data-aos-delay="400">
                 <div class="skill-centre">
                     <span class="icon">
                         <i class="fas fa-desktop"> </i>
@@ -170,7 +171,7 @@
                 </div>
               </div>
               
-              <div class="services-box">
+              <div class="services-box" data-aos="flip-left" data-aos-delay="600">
                 <div class="skill-centre">
                     <span class="icon">
                         <i class="fas fa-code" ></i>
@@ -179,7 +180,7 @@
                 </div>
               </div>
               
-              <div class="services-box">
+              <div class="services-box" data-aos="flip-left" data-aos-delay="800">
                   <div class="skill-centre">
                         <span class="icon">
                             <i class="fas fa-server" ></i>
@@ -188,7 +189,7 @@
                    </div>
               </div>
               
-              <div class="services-box">
+              <div class="services-box" data-aos="flip-left" data-aos-delay="1000">
                 <div class="skill-centre">
                     <span class="icon">
                         <i class="fab fa-searchengin"  ></i>
@@ -197,7 +198,7 @@
                 </div>
               </div>
               
-              <div class="services-box">
+              <div class="services-box" data-aos="flip-left" data-aos-delay="1200">
                 <div class="skill-centre">
                     <span class="icon">
                         <i class="fas fa-mobile-alt"></i>
@@ -295,23 +296,23 @@
     </section>
     <hr id="work-section">
    
-    <section id="work"  >
+    <section id="work"  onmouseenter="bigImg(this)" onmouseleave="normalImg(this)">
         <h2>Work</h2>
         
         <div class="img-grid-box" id="hello">
           <div class="first-img-column">
             <img src="Brochure 1.png">
-            <img src="Medbox-4.png">
+            <img src="OIE.jpg">
             <img src="E LEARNING.jpg">
             <img src="CHICKEN.jpg">
             <img src="Brochure 4.png">
           </div>
           <div class="second-img-column">
-            <img src="wave Card.png">
+            <img src="Fashion 2.jpg">
             <img src="mg4.jpg">
             <img src="MO.jpg">
             <img src="MedBox-1.png">
-            <img src="Circle card -1-1.png">
+            <img src="Builder.jpg">
             <img src="INT.jpg">
           </div>
 
@@ -371,11 +372,73 @@
   </section>
   
   <hr class="line" >
-    
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+  duration: 1000
+});
+</script>
+  <!-- <div id="cursor"></div>
+  <div id="cursor-border" style="display: flex; align-items: center; padding: 3vw 2.2vw; justify-content: center;"><p style="color: black;">veiw</p></div> -->
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
-<script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+<script>
+    const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+
+</script>
+<!-- <script>
+    function bigImg() {
+    //   alert("heek")
+    //   document.getElementById("cursor-border").style.backgroundColor = "red";
+      document.getElementById("cursor-border").style.display= "block";
+      
+      
+    }
+    function normalImg() {
+        // document.getElementById("cursor-border").style.backgroundColor = "white";
+        document.getElementById("cursor-border").style.display= "none";
+}
+</script> -->
 </html>
 
 
