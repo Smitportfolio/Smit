@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" >
+    
+    <title>Smit Patel</title>
+</head>
+<style>
+    .title{
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 3vw;
+}
+
+#go-to-box {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    right: 10px;
+}
+
+#go-to-input {
+    padding: 5px;
+    width: 60%;
+    
+    border-radius: 5px;
+    margin-right: 5px;
+}
+#go{
+    width: 40%;
+    border: 1px solid white;
+    height: 30px;
+}
+
+#main-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 50%;
+    border: 2px solid #333;
+    background-color: transparent;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out; /* Added fade-in animation */
+}
+@media only screen and (max-width: 800px) {
+  #main-box {
+    width: 95%;  
+  }
+}
+@media only screen and (max-width: 400px) {
+  #main-box {
+    padding: 2px;  
+  }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#word-display-box {
+    height: 24px;
+    width: fit-content;
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+#word-display {
+    font-size: 30px;
+    display: none;
+
+}
+
+#spelling-input {
+
+    width: 100%;
+    display: flex;
+}
+
+#user-input {
+    padding: 5px;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    background-color: white;
+    width: 60%;
+    height: 14px;
+}
+
+#feedback-box {
+    height: 24px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  
+}
+
+#feedback {
+    display: flex;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+#submit {
+    margin-left: 3px;
+    height: 33px;
+    width: 20%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+}
+#input-submit{
+    display: flex; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    background-color: white;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 2px;
+}
+#button-box{
+
+    margin: 10px 0  30px 14%;
+    width: 100%;
+    display: flex;
+}
+.preback {
+    
+    height: 30px;
+    font-size: 15px;
+    width: 30%;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+</style>
+<body>
+    <div id="main-box">
+        
+        <h1 class="title">Word Spelling Practice</h1>
+        <div id="word-display-box">
+            <div id="word-display">Loading...</div>
+        </div>
+    
+
+    <div id="spelling-input">
+
+        <div id="input-submit" >
+            <input type="text" id="user-input" placeholder="Type the spelling...">
+            <div id="feedback-box">
+                <div id="feedback"></div>
+            </div>
+        </div>
+        <button id="submit" onclick="checkSpelling()">Submit</button>
+    </div>
+
+    
+
+    <div id="button-box" >
+        <button class="preback" onclick="prevWord()">Previous</button>
+        <button class="preback" onclick="nextWord()">Next</button>
+    </div>
+    <div id="go-to-box">
+        <input type="text" id="go-to-input" placeholder="Go to word">
+        <button id="go" onclick="goToWord()">Go</button>
+    </div>
+    
+    </div>
+
+    <script>
+      let currentWordIndex = 0;
+const words = ["First nill",
+  "canyon", "sustainable", "disorder", "depth", "explore", "conservation", "university", "agricultural",
+  "industrial", "critical", "innovation", "core", "technique", "electric", "species", "company", "financial",
+  "odd", "biological", "observe", "glimpse", "alternative", "struggle", "potential", "association", "poverty",
+  "strategy", "management", "preparation", "breed", "radical", "measure", "powerful", "generator", "optimistic",
+  "puzzle", "outward", "signal", "survive", "specific", "evidence", "establish", "propose", "journal", "external",
+  "promote", "holistic", "negative", "environment", "resource", "professor", "operation", "represent", "criticism",
+  "hind", "temperature", "regulation", "definition", "legislation", "loose", "minimal", "realize", "explanation",
+  "cosmic", "pulse", "galaxy", "statistics", "analyse", "executive", "scientist", "tune", "hemisphere", "tend",
+  "atmosphere", "politics", "common", "emission", "replace", "electrical", "gasoline", "illegal", "tariff",
+  "interpretation", "originate", "bargain", "curator", "collection", "cluster", "climate", "complain", "conference",
+  "dominate", "European", "genuine", "claim", "structure", "analyst", "margin", "excess", "contain", "digital",
+  "application", "commercial", "prove", "mistake", "integrate", "historian", "benefit", "concept", "essential",
+  "quality", "track", "significant", "Parliament", "channel", "researcher", "current", "photograph", "dolphin",
+  "reproduce", "marine", "biologist", "particular", "pollution", "economics", "identify", "estimate", "bias",
+  "accurate", "habitat", "agriculture", "publish", "collide", "vibration", "flexible", "switch", "predict", "resident",
+  "declare", "economy", "firm", "involve", "sponsor", "original", "audience", "organisation", "restrict", "collaboration",
+  "recognise", "reassess", "throughout", "origin", "scale", "confidence", "solution", "refine", "various", "feature",
+  "colony", "program", "temporary", "fund", "account", "advance", "feather", "consider", "delight", "expectation",
+  "engineer", "prestigious", "department", "neuron", "contract", "vehicle", "universe", "merge", "equity", "surround",
+  "skeleton", "mammal", "overseas", "generation", "survival", "individual", "trait", "chemical", "drainage", "sediment",
+  "ore", "toxic", "stream", "cultural", "institution", "approve", "associate", "appetite", "absolute", "opportunity",
+  "productive", "consume", "astronomical", "assessment", "academic", "capture", "contribute", "consideration", "carbon",
+  "respond", "politician", "humanity", "production", "tremendous", "satellite", "colleague", "encompass", "stimulate",
+  "sequence", "constant", "symptom", "violence", "sensitive", "aggressive", "fundamental", "barrier", "genome", "epidemic",
+  "cardiologist", "mechanism", "recovery", "consumer", "platform", "amongst", "assistance", "volume", "liquid", "transform",
+  "document", "intend", "neighbour", "eclipse", "Congress", "investor", "patch", "herd", "celebration", "downside", "interact",
+  "vision", "maternal", "assignment", "property", "visible", "depict", "coral", "broadcast", "carmaker", "astronomer", "telescope",
+  "investment", "manufacture", "dioxide", "hydrogen", "manifesto", "academy", "interpersonal", "distinguish", "release", "lecture",
+  "package", "interpret", "electronic", "transmit", "software", "majority", "variety", "extensive", "submerge", "landscape", "uncover",
+  "experiment", "interface", "desirable", "movement", "boundary", "massive", "bulk", "artificial", "dramatic", "disappear", "advertise",
+  "promotion", "gallery", "architecture", "section", "basically", "infect", "previous", "conventional", "district", "circulation",
+  "problematic", "objective", "celebrate", "representative", "interpreter", "irrelevant", "physician", "preliminary", "distance", "biology",
+  "proposal", "economist", "investigation", "evident", "archaeology", "folk", "discipline", "collaborative", "vessel", "aesthetic", "indicate",
+  "phenomenon", "accessible", "relevant", "particle", "equation", "electron", "conduct", "employment", "complexity", "polar", "visualize",
+  "dimension", "Forth", "combination", "coordinate", "electromagnetic", "radiation", "engagement", "honour", "sensitivity", "recorder",
+  "conversational", "extreme", "element", "dissatisfaction", "nonpartisan", "eliminate", "compute", "prestige", "foyer", "inject", "tropical",
+  "grain", "stale", "curious", "robust", "feedback", "historic", "incredible", "wilderness", "mimic", "concentrate", "breadth", "practise",
+  "inflection", "recession", "float", "detect", "colloquial", "archaeologist", "deficiency", "utter", "exceptional", "addition", "panel",
+  "quantity", "scatter", "notion", "pursuit", "wrap", "expansion", "simulate", "conclude", "migrate", "pesticide", "frequency", "adverse",
+  "microphone", "transition", "construction", "sketch", "exploration", "classical", "observer", "deform", "rebound", "census", "frustrate",
+  "distinctive", "reconstruct", "instruct", "unemployment", "auditory", "pose", "merger", "disrupt", "immigrant", "smartphone", "depiction",
+  "rough", "migrant", "manipulation", "bloom", "spatial", "consultant", "fracture", "sober", "ultimate", "collision", "atomic", "hive", "detector",
+  "compatible", "vacuum", "automobile", "airplane", "prescribe", "northwest", "drought", "portrait", "offset", "dam", "crustacean", "sacrifice",
+  "artefact", "compensate", "deliver", "collector", "spike", "settlement", "boom", "rear", "appoint", "plunge", "debris", "flick", "battery",
+  "judgement", "hub", "identical", "advocate", "mandate", "aircraft", "fort", "script", "flush", "visualisation", "impression", "grin", "upwards",
+  "landowner", "iceberg", "innovator", "permanent", "luxury", "echo", "reposition", "insurance", "responsive", "undefined", "consensus", "unravel",
+  "champagne", "accommodate", "enlarge", "profession", "eradicate", "disturb", "unusable", "database", "justice", "molecular", "mode", "apparent",
+  "rhythmical", "glean", "mysterious", "pertain", "forge", "overturn", "cord", "stressful", "repetition", "entrepreneur", "macromolecular", "exert",
+  "legitimate", "obstruct", "confess", "coverage", "trade-of", "amend", "pollinator", "elimination", "partial", "deafen", "acoustics", "outgo",
+  "spinal", "pun", "rivet", "subscribe", "discern", "Latino", "bureau", "abrupt", "eventual", "derivative", "staircase", "coalition", "starvation",
+  "attendant", "lizard", "predicament", "anniversary", "shockwave", "situate", "moonshot", "urgency", "reimagine", "cruise", "clump", "backward",
+  "desirability", "algorithm", "dater", "realist", "scarlet", "signifier", "perch", "binary", "spew", "slam", "boredom", "consonant", "convene",
+  "vernacular", "mutate", "forgive", "tint", "scotch", "foreshadow", "beleaguer", "pend", "matchstick", "unpopulated", "brood", "unpublished", "pedal",
+  "defensible", "oceanographer", "counterintuitive", "cocoon", "interstellar", "flake", "monetary", "indirect", "slump", "frontier", "thoughtful",
+  "fragile", "multifaceted", "confection", "blunt", "pilgrim", "operational", "biofuel", "restoration", "bulb", "combo", "awesome", "mite", "leftover",
+  "aurora", "bounty", "brainwave", "rebuild", "unattractive", "rationality", "confidential", "clamour", "energetic", "almond", "transcend", "fossilise",
+  "irrigate", "toolkit", "patriotism", "yawn", "sequester", "compliance", "worksheet", "sunflower", "bracket", "formalistic", "sparkiness", "appendix",
+  "manuscript", "political", "system", "inundate", "sleek", "pseudo", "optimise", "nanometre", "weld", "socialise", "stabilise", "uptick", "antiquarian",
+  "unmix", "centrifuge", "further", "motivational", "auroral", "radiant", "totality", "criminology", "narrowness", "professorship", "treatable", "wingless",
+  "vampire", "categorise", "unimaginative", "fastener", "unweldable", "spate", "unashamed", "engineering", "characterisation", "phrenetic", "automaker",
+  "sexton", "croft"
+]; // Add your words here
+
+document.addEventListener("DOMContentLoaded", function () {
+    displayWord();
+});
+
+function displayWord() {
+    const wordDisplay = document.getElementById("word-display");
+    wordDisplay.textContent = words[currentWordIndex];
+    document.getElementById("user-input").value = "";
+    document.getElementById("feedback").textContent = "";
+    wordDisplay.style.display = "none";
+    speakWord();
+}
+
+function checkSpelling() {
+    const userInput = document.getElementById("user-input").value.toLowerCase();
+    const currentWord = words[currentWordIndex].toLowerCase();
+    const wordDisplay = document.getElementById("word-display");
+    const feedbackElement = document.getElementById("feedback");
+
+    if (userInput === currentWord) {
+        feedbackElement.textContent = "Correct";
+        feedbackElement.style.color = "green"; // Set text color to green
+        wordDisplay.style.visibility = "block";
+        enableNextButton();
+    } else {
+        feedbackElement.textContent = "Wrong";
+        feedbackElement.style.color = "red"; // Set text color to red
+        wordDisplay.style.display = "block";
+    }
+}
+
+function speakWord() {
+    setTimeout(function() {
+        const utterance = new SpeechSynthesisUtterance(words[currentWordIndex]);
+        speechSynthesis.speak(utterance);
+    }, 1000); // 1500 milliseconds (1.5 seconds) delay
+}
+
+
+function nextWord() {
+    const wordDisplay = document.getElementById("word-display");
+    wordDisplay.style.display = "none";
+
+    if (currentWordIndex < words.length - 1) {
+        currentWordIndex++;
+        displayWord();
+        disableNextButton();
+    }
+}
+
+function prevWord() {
+    const wordDisplay = document.getElementById("word-display");
+    wordDisplay.style.display = "none";
+
+    if (currentWordIndex > 0) {
+        currentWordIndex--;
+        displayWord();
+        disableNextButton();
+    }
+}
+
+function enableNextButton() {
+    document.getElementById("next-button").disabled = false;
+}
+
+function disableNextButton() {
+    document.getElementById("next-button").disabled = true;
+}
+
+function goToWord() {
+    const goToInput = document.getElementById("go-to-input").value;
+    const targetIndex = parseInt(goToInput) - 1;
+
+    if (!isNaN(targetIndex) && targetIndex >= 0 && targetIndex < words.length) {
+        currentWordIndex = targetIndex;
+        displayWord();
+        disableNextButton();
+    } else {
+        alert("Invalid input. Please enter a valid word number.");
+    }
+}
+
+    </script>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+
+
+</html>
+
+
+
