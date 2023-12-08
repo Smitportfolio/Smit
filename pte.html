@@ -26,17 +26,23 @@
     position: absolute;
     width: 25%;
     bottom: 0;
+    align-items: center;
     right: 10px;
 }
 
 #go-to-input {
-    padding: 5px;
+    height: 24px;
+    height: 14px;
+    box-shadow: none;
     width: 60%;
     border-radius: 5px;
     margin-right: 5px;
 }
 #go{
     width: 40%;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 30px;
 }
 
 #main-box {
@@ -50,7 +56,7 @@
     height: fit-content;
     width: 50%;
     border: 2px solid #333;
-    background-color: #fff;
+    background-color: transparent;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-in-out; /* Added fade-in animation */
@@ -78,6 +84,7 @@
 #word-display {
     position: absolute;
     display: none;
+    color: white;
     font-weight: 600;
     right: 49%;
 
@@ -108,6 +115,8 @@
     margin-right: 5px;
     border: none;
     outline: none;
+    color: white;
+    background-color: transparent;
     width: 60%;
     height: 14px;
     box-shadow: none;
@@ -144,7 +153,7 @@
 }
 #input-submit{
     display: flex; 
-    border: 1px solid black; 
+    border: 1px solid rgb(194, 194, 194); 
     border-radius: 5px; 
     justify-content: space-between; 
     width: 100%;
@@ -375,7 +384,7 @@ function goToWord() {
         displayWord();
         disableNextButton();
     } else {
-        alert("Invalid input. Please enter a valid word number.");
+        alert("Invalid input. Please enter a valid word number between 1 to 647.");
     }
 }
 
