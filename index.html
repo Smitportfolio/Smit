@@ -366,9 +366,11 @@
     </section>
     <hr class="line" >
     <section >
-      <div class="buttons" style="width: 100%; padding-top: 0rem; left: 0;">
-          <a  rel="noopener noreferrer" class="linkedin" href="index.html" >Resume<i class="fa-solid fa-arrow-right" style="color: #ffffff; transform: rotate(-45deg); padding-left: 5px;" ></i></a>
-      </div>   
+      <div class="buttons">
+  <a rel="noopener noreferrer" class="linkedin" href="" onclick="showPasswordPrompt()">Resume
+    <i class="fa-solid fa-arrow-right" style="color: #ffffff; transform: rotate(-45deg); padding-left: 5px;"></i>
+  </a>
+</div>   
   </section>
   
   <hr class="line" >
@@ -439,6 +441,22 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
         document.getElementById("cursor-border").style.display= "none";
 }
 </script> -->
+    <script>
+  function showPasswordPrompt() {
+    var password = prompt("Please enter the password:");
+
+    // You can set your desired password here
+    var correctPassword = "Dhingali";
+
+    if (password === correctPassword) {
+      // If the password is correct, redirect to the specified URL
+      window.location.href = "loves.html";
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  }
+</script>
+
 </html>
 
 
