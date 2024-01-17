@@ -1,3 +1,22 @@
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function () {
+            // Reset the form after submission
+            contactForm.reset();
+        });
+    }
+});
+
 function myFunction() {
     alert ("page is under construction!");
   }
@@ -8,34 +27,65 @@ function myFunction() {
   
 
 
-function openNav() {
-  document.getElementById("togglenav").style.left = "3%";
-  document.getElementById("open").style.display = "none";
-  document.getElementById("close").style.display = "block";
-}
-function closeNav() {
-  document.getElementById("togglenav").style.left = "-100%";
-  document.getElementById("close").style.display = "none";
-  document.getElementById("open").style.display = "block";
-  
-}
-function codeAddress() {
-  document.getElementById("bounce").style.animation = "paused";
-}
-window.onload = codeAddress;
+document.addEventListener("DOMContentLoaded", function() {
+  // Your script here
+  var earth = document.getElementById('earth_shape'),
+        
+          tl = new TimelineMax(),
+          tl2 = new TimelineMax({repeat:-1, yoyo: true}),
+          tl3 = new TimelineMax({repeat:-1, yoyo: true});
+      
+          tl
+             .from(earth, 3, {rotation: 360,
 
-function Play()
-      {
-        var myAudio = document.getElementById("audioval");
-        if(myAudio.paused) {
-            myAudio.play();
-            bounce.style.animation = "";
-         
+              transformOrigin:"center",
+              ease: Power0.easeNone,  
+              repeat:-1});
+              var btn = document.getElementById('scrollup');
+      
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+       btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+    });
+                            
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+                              
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  var customCarousel = document.querySelector(".custom-carousel");
+  var items = document.querySelectorAll(".custom-carousel .item");
+
+  items.forEach(function (item) {
+    item.addEventListener("click", function () {
+      items.forEach(function (otherItem) {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
         }
-        else {
-           myAudio.pause();
-           document.getElementById("bounce").style.animation = "paused";
-        }
-      }
+      });
+      item.classList.toggle("active");
+    });
+  });
 
+  // Owl Carousel initialization (replace with your actual settings)
+  new OwlCarousel(customCarousel, {
+    autoWidth: true,
+    loop: true
+  });
+});
 
+// Owl Carousel constructor (replace with your actual implementation)
+function OwlCarousel(element, options) {
+  // Implement Owl Carousel initialization logic here
+  // You can use a library like Owl Carousel or create your own logic
+}
