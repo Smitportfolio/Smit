@@ -876,10 +876,10 @@ li span {
   }
 .skills-grid .cell {
   aspect-ratio: 1/1;
-  border: 1px solid #523EE8;
+  border: 0.2rem solid #523EE8;
   border-radius: 22px;
   container-type: inline-size;
-  border: 0.5rem solid transparent;
+  
   border-radius: 1rem;
   color: hsl(0 0% 10%);
   background: none;
