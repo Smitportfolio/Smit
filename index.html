@@ -2,128 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+ 
+
+    <link rel="stylesheet" href="work.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" >
-    
     <title>Smit Patel</title>
 </head>
 <body>
+    <a id="scrollup"><i class="fa-solid fa-arrow-up" id="scrolluparrow"></i></a>
+    <nav id="navbar" data-aos="fade-down" data-aos-duration="1000">
+        
+        <a  rel="noopener noreferrer" class="main-nav-symbol" id="home-text" href="#landing-page"  ><i class="fa-solid fa-house"></i><p class="home-text">Home</p></a> 
+        <a  rel="noopener noreferrer" class="main-nav-symbol" id="timeline-nav-text" href="#timeline-section" ><i class="fa-solid fa-user-graduate"></i><p class="timeline-nav-text" >Timeline</p></a>
+        <a  rel="noopener noreferrer" class="main-nav-symbol" id="skill-text" href="#skills-section" ><i class="fa-solid fa-brain" ></i><p class="skill-text" >Skills</p></a>
+        <a  rel="noopener noreferrer" class="main-nav-symbol" id="contact-text"  href="#work-section" ><i class="fa-solid fa-briefcase"></i><p class="contact-text" >Work</p></a>
+        <a  rel="noopener noreferrer" class="main-nav-symbol" id="contact-text"  href="#contact-section-hr" ><i class="fa-solid fa-user" ></i><p class="contact-text">Contact</p></a>
+        
+        
 
-   
-    <div class="togglenav" id="togglenav">
-        
-        <a  rel="noopener noreferrer" class="navsymbol" id="home-text" href="index.html"  ><i class="fa-solid fa-house" style="  padding: 10px 8px; border-radius: 50%;" ></i><p class="home-text">Home</p></a> 
-        <a  rel="noopener noreferrer" class="navsymbol" id="timeline-text" href="#timeline-section" ><i class="fa-solid fa-user-graduate"></i><p class="timeline-text" style="top: 26%;">Timeline</p></a>
-        <a  rel="noopener noreferrer" class="navsymbol" id="skill-text" href="#skills-section" ><i class="fa-solid fa-brain" ></i><p class="skill-text" style="top: 46%;">Skills</p></a>
-        <a  rel="noopener noreferrer" class="navsymbol" id="contact-text"  href="#contact-section" ><i class="fa-solid fa-user" ></i><p class="contact-text" style="top: 66%;">Contact</p></a>
-        <a  rel="noopener noreferrer" class="navsymbol" id="contact-text"  href="#work-section" ><i class="fa-solid fa-briefcase"></i><p class="contact-text" style="top: 66%;">Contact</p></a>
-        <!-- <a  rel="noopener noreferrer" type="button" onClick="Play()" class="navsymbol"   id="music" href="" ><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></a> -->
-        
-
-        <button  id="bounce" style="border-radius: 50%; " type="button" onClick="Play()"><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></button>
-    <audio controls id="audioval" style="display: none;">
-      <source src="music.mp3" type="audio/mp3">
-    </audio>
-         
-          
-    </div>
-    <nav class="navbar">
-        <p class="upper-online-text" style="padding-left: 15px;">  <span class="dot"></span>  Online.</p>
-        <div class="top-nav">
-        
-            <div class='open' id="open" onclick="openNav()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
-            <div class='close' id="close" onclick="closeNav()"><i class="fa-solid fa-xmark" style="color: #fcfcfc;"></i></div>
-         
-        </div>
+        <div  id="bounce" style="border-radius: 50%; background-color: aqua; " type="button" onClick="Play()"><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></div>
+      <audio controls id="audioval" style="display: none; outline: none; border: none;">
+        <source src="music.mp3" type="audio/mp3">
+      </audio>
+    
+    
     </nav>
     <section id="landing-page"  >
         <article class="intro" data-aos="fade-in">
-            <p class="online-text">
+            <p class="online-text" style="color: black;">
                 
             <span class="dot"></span>
             Online.
             </p>
-            <h1 class="first">Hey, I'm <span class="marker">Smit Patel</span><br><span class="gradient">Life of DiversePassions</span></h1>
+            <h1 class="first"  data-aos="fade-up">Hey, I'm <span class="marker" style="color: #523ee8; line-height: 0;">Smit&nbsp;Patel</span><br><span class="gradient">Life of DiversePassions</span></h1>
 
             <div class="buttons-raw">
 
-                <div class="buttons" data-aos="fade-left" data-aos-delay="600">
-                    <a  rel="noopener noreferrer" class="linkedin" onclick="Privacy()" href="" ><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                <div class="buttons-div"  data-aos="fade-left" data-aos-delay="600">
+                    <a   rel="noopener noreferrer" class="socialmedia-button"  target="_blank" href="https://www.linkedin.com/in/smit-patel-a7b702285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" ><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
                 </div>
-                <div class="buttons" data-aos="fade-left" data-aos-delay="900">
-                    <a  rel="noopener noreferrer" class="linkedin"  onclick="Privacy()" href="" ><i class="fa-brands fa-instagram" ></i>Instagram</a>
+                <div class="buttons-div"  data-aos="fade-left" data-aos-delay="900">
+                    <a  rel="noopener noreferrer" class="socialmedia-button"   target="_blank" href="https://www.instagram.com/drx.smit.patel/" ><i class="fa-brands fa-instagram" ></i>Instagram</a>
                 </div>
-                <div class="buttons" data-aos="fade-left" data-aos-delay="1200">
-                    <a  rel="noopener noreferrer" class="linkedin" onclick="Privacy()" href="pte.html" ><i class="fa-regular fa-envelope" ></i>Mail</a>
+                <div class="buttons-div" data-aos="fade-left" data-aos-delay="1200">
+                  <a rel="noopener noreferrer" class="socialmedia-button" target="_blank" href="mailto:patelsmitmanilal@gmail.com">
+                      <i class="fa-regular fa-envelope"></i>Mail
+                  </a>
                 </div>
+              
                 
 
             </div>
-            <p class="intro-para">Hi, I am Smit, a recent B.pharm graduate with valuable experience from a 1 month internship. </p>
+            
+            <p class="intro-para">Hi, I am Smit, a recent B.pharm graduate with valuable experience from a 1 month internship.<br></p>
+            <section class="resume-section">
+              <div class="buttons-div"  data-aos="fade-left" data-aos-delay="900">
+                <a  rel="noopener noreferrer" class="socialmedia-button"   target="_blank" href="https://www.instagram.com/drx.smit.patel/" >Resume<i id="resume-arrow" style="transform: rotate(-45deg);" class="fa-solid fa-arrow-right" ></i></a>
+              </div>
+            </section>
 
         </article>
-       
+        <main data-aos="zoom-in">
+            <div class="cloud-message">
+               
+                <img id="myimage" src="IMG_6303.PNG">
+                
+            </div>
+              
+        </main>
+        
+        
     </section>
-
     <hr id="timeline-section">
-
-    <section id="timeline" >
-        <h2>My Timeline</h2>
+ 
+    <section id="timeline" style="overflow: hidden;"  >
+        <h2 class="section-title">My Timeline</h2>
         <section class="timeline-section">
             <div class="timeline-items">
-                <div class="timeline-item"  data-aos="fade-right">
+                <div class="timeline-item"  data-aos="fade-right" >
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2017</div>
                     <div class="timeline-content" >
-                        <h3>Secondary School</h3>
-                        <p1>GSEB</p1>
+                        <h3 class="timeline-h3">Secondary School (10th Grade)</h3>
+                        <p class="timeline-text">GSEB</p>
                         <!-- <p2>Gujarat Secondary and Higher Secondary Education Board</p2> -->
-                        <p>Percentile Rank-81.52%</p>
+                        <p class="timeline-text"> Percentile Rank-81.52%</p>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2018</div>
                     <div class="timeline-content">
-                        <h3>Higher Secondary School</h3>
-                        <p1>GSEB</p1>
+                        <h3 class="timeline-h3">Higher Secondary (12th Grade)</h3>
+                        <p class="timeline-text">GSEB</p>
                         <!-- <p2>Gujarat Secondary and Higher Secondary Education Board</p2> -->
-                        <p>Percentile Rank-92.87%</p>
+                        <p class="timeline-text">Percentile Rank-92.87%</p>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-right"> 
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2019</div>
                     <div class="timeline-content">
-                        <h3>B.Pharm</h3>
-                        <p><span class="text-indigo-300 cursor-pointer hover:underline transition-all"><a href="http://www.tutonpharma.com/" target="_blank" rel="no-referrer" style="color:#a5b4fc;">@Gujarat Technological University</a></span></p>
-                        <p>CGPA - 7.55</p>
+                        <h3 class="timeline-h3">B.Pharm</h3>
+                        <p><span class="text-indigo-300 cursor-pointer hover:underline transition-all"><a href="http://www.tutonpharma.com/" target="_blank" rel="no-referrer" style="color:#0027eb; text-decoration: none;">@Gujarat Technological University</a></span></p>
+                        <p class="timeline-text">CGPA - 7.55</p>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2022</div>
                     <div class="timeline-content">
-                        <h3>Internship (Sem-7)</h3>
-                        <p><span class="text-indigo-300 cursor-pointer hover:underline transition-all"><a href="http://www.tutonpharma.com/" target="_blank" rel="no-referrer" style="color:#a5b4fc;">@Tuton Pharmaceuticals</a></span></p>
-                        <p>GIDC, Naroda, Ahmedabad, </p>
-                        <p>Gujarat 380030</p>
+                        <h3 class="timeline-h3">Internship (Sem-7)</h3>
+                        <p><span class="text-indigo-300 cursor-pointer hover:underline transition-all"><a href="http://www.tutonpharma.com/" target="_blank" rel="no-referrer" style="color:#0027eb; text-decoration: none;">@Tuton Pharmaceuticals</a></span></p>
+                        <p class="timeline-text">GIDC, Naroda, Ahmedabad, </p>
+                        <p class="timeline-text">Gujarat 380030</p>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2023</div>
                     <div class="timeline-content">
-                        <h3>First Job</h3>
-                        <p><span class="text-indigo-300 cursor-pointer hover:underline transition-all"><a href="https://www.ambicapharmamachinery.in/" target="_blank" rel="no-referrer" style="color: #a5b4fc;">@Allmach Pharma Machinery</a></span>
-                            <p>Digital Marketing Head</p>
+                        <h3 class="timeline-h3">First Job</h3>
+                        <p><span class="text-indigo-300 cursor-pointer hover:underline transition-all"><a href="https://www.ambicapharmamachinery.in/" target="_blank" rel="no-referrer" style="color: #0027eb; text-decoration: none;">@Allmach Pharma Machinery</a></span>
+                            <p class="timeline-text">Digital Marketing Head</p>
                     </div>
                 </div>
                 <!-- <div class="timeline-item">
@@ -144,203 +153,76 @@
                 </div> -->
             </div>
         </section>
-        
-    </section>
-    <hr class="line" id="skills-section" >
- 
-    <section id="Skills"  >
-        <h2>Skills</h2>
-        <div class="Skill-container">
-            <div class="services-inner">
-              
-              <div class="services-box" data-aos="flip-left" data-aos-delay="200">
-                  <div class="skill-centre">
-                      <span class="icon">
-                          <i class="fas fa-paint-brush"></i>
-                        </span>
-                        <h3 class="services-title">graphic design</h3>
-                    </div>
-              </div>
-              
-              <div class="services-box" data-aos="flip-left" data-aos-delay="400">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fas fa-desktop"> </i>
-                    </span>
-                    <h3 class="services-title">web design</h3>
-                </div>
-              </div>
-              
-              <div class="services-box" data-aos="flip-left" data-aos-delay="600">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fas fa-code" ></i>
-                    </span>
-                    <h3 class="services-title">web development</h3>
-                </div>
-              </div>
-              
-              <div class="services-box" data-aos="flip-left" data-aos-delay="800">
-                  <div class="skill-centre">
-                        <span class="icon">
-                            <i class="fas fa-server" ></i>
-                        </span>
-                        <h3 class="services-title">Marketing</h3>
-                   </div>
-              </div>
-              
-              <div class="services-box" data-aos="flip-left" data-aos-delay="1000">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fab fa-searchengin"  ></i>
-                    </span>
-                    <h3 class="services-title">Communication</h3>
-                </div>
-              </div>
-              
-              <div class="services-box" data-aos="flip-left" data-aos-delay="1200">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </span>
-                    <h3 class="services-title">responsive design</h3>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        
-    </section >
-    <hr class="line" >
-    <section id="tech-skills"  >
-        <h2>Tech-Skills</h2>
-        <div class="Skill-container">
-            <div class="services-inner">
-              
-              <div class="services-box">
-                  <div class="skill-centre">
-                      <span class="icon">
-                        <img src="corel.png" style="" alt="hero">
-                      </span>
-                        <h3 class="services-title" >corel draw</h3>
-                    </div>
-              </div>
-              
-              <div class="services-box">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <img src="canva.png" style=" -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1); width: 185%; height: 58%;" alt="hero">
-                    </span>
-                    <h3 class="services-title">Canva</h3>
-                </div>
-              </div>
-              
-              <div class="services-box">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <h3 style="color: white ; font-size: 38px; font-family: Arial, Helvetica, sans-serif;">Ps</h3>
-                    </span>
-                    <h3 class="services-title">Photoshop</h3>
-                </div>
-              </div>
-              
-              <div class="services-box">
-                  <div class="skill-centre">
-                        <span class="icon">
-                            <img src="vs-code.png" alt="hero" style=" -webkit-filter: brightness(0) invert(1);
-                            filter: brightness(0) invert(1);">
-                        </span>
-                        <h3 class="services-title">VS Studio code</h3>
-                   </div>
-              </div>
-              
-              <div class="services-box">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <img src="excel.png" style=" -webkit-filter: brightness(0) invert(1);
-                        filter: brightness(0) invert(1);">
-                    </span>
-                    <h3 class="services-title">MS Excel</h3>
-                </div>
-              </div>
-              
-              <div class="services-box">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fa-solid fa-video" style="color: #ffffff;"></i>
-                    </span>
-                    <h3 class="services-title">Video editing</h3>
-                </div>
-              </div>
-              <div class="services-box">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fab fa-html5" style="color: #ffffff;"></i>
-                    </span>
-                    <h3 class="services-title">HTML</h3>
-                </div>
-              </div>
-              <div class="services-box">
-                <div class="skill-centre">
-                    <span class="icon">
-                        <i class="fa-brands fa-css3-alt" style="color: #ffffff;"></i>
-                    </span>
-                    <h3 class="services-title">CSS</h3>
-                </div>
-              </div>
-              
-            </div>
-        </div>
-        
-    </section>
-    <hr id="work-section">
-   
-    <section id="work"  onmouseenter="bigImg(this)" onmouseleave="normalImg(this)">
-        <h2>Work</h2>
-        
-        <div class="img-grid-box" id="hello">
-          <div class="first-img-column">
-            <img src="Brochure 1.png">
-            <img src="OIE.jpg">
-            <img src="E LEARNING.jpg">
-            <img src="CHICKEN.jpg">
-            <img src="Brochure 4.png">
-          </div>
-          <div class="second-img-column">
-            <img src="Fashion 2.jpg">
-            <img src="mg4.jpg">
-            <img src="MO.jpg">
-            <img src="MedBox-1.png">
-            <img src="Builder.jpg">
-            <img src="INT.jpg">
-          </div>
 
+    </section>
+    <hr id="skills-section-hr">
+    
+    <section id="skills-section"  >
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="cell">
+          <span class="icon">
+            <img class="skill-icon" src="problemsolving.png">
+          </span>
+          <p class="skill-title">ProblemSolving</p>
         </div>
-   
+        <div class="cell">
+          <span class="icon">
+            <img class="skill-icon" src="adaptation.png">
+          </span>
+          <p class="skill-title">Adaptibility</p>
+        </div>
+        <div class="cell">
+          <span class="icon">
+            <img class="skill-icon" src="networking.png">
+          </span>
+          <p class="skill-title">Communication</p>
+        </div>
+        <div class="cell">
+          <span class="icon">
+            <img class="skill-icon" src="teamwork.png">
+          </span>
+          <p class="skill-title">Teamwork</p>
+        </div>
+        <div class="cell">
+          <span class="icon">
+            <img class="skill-icon" src="authenticity.png">
+          </span>
+          <p class="skill-title">Quality Control</p>
+        </div>
+        
+      </div>
+      
+      
       
     </section>
+  
+
+      
     
-    <hr id="contact-section" >
+    
+    <hr id="contact-section-hr"  >
      
     
     
-    <section>
+    <section class="contact-section">
       <div class="contact-contaner" style="position: relative; top: 0; left: 0; right: 0;">
         <div class="form-container">
-          <!-- <div class="left-container">
-            <div class="left-inner-container">
-            <h2>Let's Chat</h2>
-            <p>Whether you have a question, want to start a conversation.</p>
-              <br>
-              <p>Feel free to send me a message in the contact form</p>
-          </div>
-            </div> -->
+           <div class="left-container">
+               <div class="left-inner-container">
+                    <h2 class="section-title" data-aos="fade-up">Let's Chat</h2>
+                    <p data-aos="fade-up">Whether you have a question, want to start a conversation.</p>
+                    <br>
+                    <p data-aos="fade-up">Feel free to send me a message in the contact form</p>
+              </div>
+              
+                
+           </div>
           <div class="right-container">
-            <div class="right-inner-container">
-                <form action="https://formsubmit.co/psmit8320@gmail.com"  target="_blank" method="POST">
-                  <h2 class="lg-view">Contact</h2>
-                  <h2 class="sm-view">Let's Chat</h2>
+            <div class="right-inner-container" data-aos="fade-left">
+                <form id="contactForm" action="https://formsubmit.co/psmit8320@gmail.com"  target="_blank" method="POST" >
+                  <h2 class="section-title">Contact</h2>
+                  
                  <!-- <p>* Required</p> -->
                   <!-- <div class="social-container">
                       <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -350,7 +232,7 @@
                 <input type="text" name="name" placeholder="Name *"  />
                 <input type="email" name="Email" placeholder="Email *" />
                 <input type="text" name="Company" placeholder="Company" />
-                <input type="phone" name="phone" placeholder="Phone" />
+                <input type="phone" name="phone" placeholder="Phone"  />
                 <textarea rows="4" name="message" placeholder="Message"></textarea>
                 <button type="submit"  class="submit-button">Submit</button>
               </form>
@@ -360,104 +242,112 @@
       </div>
     </section>
     <hr class="line" >
-    <section>
-        <h2 class="Thanks" style="size: 18px; font-size: 1.25rem;
-        line-height: 1.75rem;">Thanks for scrolling.</h2>
-    </section>
-    <hr class="line" >
-    <section >
-      <div class="buttons">
-  <a rel="noopener noreferrer" class="linkedin" href="loves.html" onclick="showPasswordPrompt()">Resume
-    <i class="fa-solid fa-arrow-right" style="color: #ffffff; transform: rotate(-45deg); padding-left: 5px;"></i>
-  </a>
-</div>   
-  </section>
+    <section id="thanks">
+   
+     <div id="moving-text">
+        <div class="con">
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+        </div>
+        <div class="con">
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+        </div>
+        <div class="con">
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+            <h1>THANKS FOR SCROLLING</h1>
+            <div id="gola"></div>
+        </div>
+     </div>
   
-  <hr class="line" >
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+       
+    </section>
 
-<script>
-  AOS.init({
-  duration: 1000
-});
-</script>
-  <!-- <div id="cursor"></div>
-  <div id="cursor-border" style="display: flex; align-items: center; padding: 3vw 2.2vw; justify-content: center;"><p style="color: black;">veiw</p></div> -->
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
-<script>
-    const cursor = document.querySelector("#cursor");
-const cursorBorder = document.querySelector("#cursor-border");
-const cursorPos = { x: 0, y: 0 };
-const cursorBorderPos = { x: 0, y: 0 };
-
-document.addEventListener("mousemove", (e) => {
-  cursorPos.x = e.clientX;
-  cursorPos.y = e.clientY;
-
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-
-requestAnimationFrame(function loop() {
-  const easting = 8;
-  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
-  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
-
-  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
-  requestAnimationFrame(loop);
-});
-
-document.querySelectorAll("[data-cursor]").forEach((item) => {
-  item.addEventListener("mouseover", (e) => {
-    if (item.dataset.cursor === "pointer") {
-      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
-      cursorBorder.style.setProperty("--size", "30px");
-    }
-    if (item.dataset.cursor === "pointer2") {
-      cursorBorder.style.backgroundColor = "white";
-      cursorBorder.style.mixBlendMode = "difference";
-      cursorBorder.style.setProperty("--size", "80px");
-    }
-  });
-  item.addEventListener("mouseout", (e) => {
-    cursorBorder.style.backgroundColor = "unset";
-    cursorBorder.style.mixBlendMode = "unset";
-    cursorBorder.style.setProperty("--size", "50px");
-  });
-});
-
-</script>
-<!-- <script>
-    function bigImg() {
-    //   alert("heek")
-    //   document.getElementById("cursor-border").style.backgroundColor = "red";
-      document.getElementById("cursor-border").style.display= "block";
-      
-      
-    }
-    function normalImg() {
-        // document.getElementById("cursor-border").style.backgroundColor = "white";
-        document.getElementById("cursor-border").style.display= "none";
-}
-</script> -->
     <script>
-  function showPasswordPrompt() {
-    var password = prompt("Please enter the password:");
-
-    // You can set your desired password here
-    var correctPassword = "Dhingali";
-
-    if (password === correctPassword) {
-      // If the password is correct, redirect to the specified URL
-      window.location.href = "loves.html";
+      document.addEventListener('DOMContentLoaded', function() {
+        let locationtext = document.getElementById('location');
+        let locationdiv = document.getElementById('location-div');
+        let stand = document.getElementById('stand');
+        let isExpanded = false;
+    
+        document.getElementById('globec').addEventListener('click', function() {
+          if (isExpanded) {
+            locationtext.style.width = "0";
+            locationdiv.style.border = "none";
+            locationdiv.style.backgroundColor = "transparent";
+            stand.style.fill = "#523EE8";
+          } else {
+            locationtext.style.width = "8em";
+            locationdiv.style.backgroundColor = "#523EE8";
+            stand.style.fill = "white";
+          }
+          isExpanded = !isExpanded;
+        });
+      });
+    </script>
+    
+ 
+<script>
+  var lastScrollTop = 0
+navbar = document.getElementById("navbar")
+window.addEventListener("scroll", function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = "-80px"
     } else {
-      alert("Incorrect password. Please try again.");
+        navbar.style.top = "7vh"
+
     }
-  }
+    lastScrollTop = scrollTop
+})
+ 
+
+// Initial call to start the smooth scrolling
+smoothScroll();
+
+</script>
+<script>
+
+function codeAddress() {
+  document.getElementById("bounce").style.animation = "paused";
+}
+window.onload = codeAddress;
+
+function Play()
+      {
+        var myAudio = document.getElementById("audioval");
+        if(myAudio.paused) {
+            myAudio.play();
+            bounce.style.animation = "";
+         
+        }
+        else {
+           myAudio.pause();
+           document.getElementById("bounce").style.animation = "paused";
+        }
+      }
+
+</script>
+<script>
+    AOS.init(
+      
+    );
+    AOS.init({
+  duration: 1200,
+})
+
 </script>
 
+</body>
 </html>
-
-
-
