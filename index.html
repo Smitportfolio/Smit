@@ -18,7 +18,7 @@
 </head>
 <body>
     <a id="scrollup"><i class="fa-solid fa-arrow-up" id="scrolluparrow"></i></a>
-    <nav id="navbar" data-aos="fade-down" data-aos-duration="1000">
+    <nav id="navbar" >
         
         <a  rel="noopener noreferrer" class="main-nav-symbol" id="home-text" href="#landing-page"  ><i class="fa-solid fa-house"></i><p class="home-text">Home</p></a> 
         <a  rel="noopener noreferrer" class="main-nav-symbol" id="timeline-nav-text" href="#timeline-section" ><i class="fa-solid fa-user-graduate"></i><p class="timeline-nav-text" >Timeline</p></a>
@@ -28,7 +28,7 @@
         
         
 
-        <div  id="bounce" style="border-radius: 50%; background-color: aqua; " type="button" onClick="Play()"><i class="fa-solid fa-music" style="color: #ff00dd; font-size: 15px; background-color: white; padding: 10px; border-radius: 50%;"></i></div>
+        <div  id="bounce" style="border-radius: 50%;" type="button" onClick="toggleAudio()"><i class="fa-solid fa-music" id="music-sign"></i></div>
       <audio controls id="audioval" style="display: none; outline: none; border: none;">
         <source src="music.mp3" type="audio/mp3">
       </audio>
@@ -63,11 +63,11 @@
             </div>
             
             <p class="intro-para">Hi, I am Smit, a recent B.pharm graduate with valuable experience from a 1 month internship.<br></p>
-            <section class="resume-section">
+            <div class="resume-section">
               <div class="buttons-div"  data-aos="fade-left" data-aos-delay="900">
                 <a  rel="noopener noreferrer" class="socialmedia-button"   target="_blank" href="https://www.instagram.com/drx.smit.patel/" >Resume<i id="resume-arrow" style="transform: rotate(-45deg);" class="fa-solid fa-arrow-right" ></i></a>
               </div>
-            </section>
+            </div>
 
         </article>
         <main data-aos="zoom-in">
@@ -196,16 +196,58 @@
       
       
     </section>
-  
+    <hr id="work-section">
 
       
+    <section id="work" >
+      <h2 class="section-title">Work</h2>
+      <div class="main-box">
+        <div class="product-img" id="dragonfruitproject">
+            <div id="image-text">
+                <p id="image-title-text">Dragon Fruit Serum</p>
+            </div>
+            <button class="show-button" onclick="toggleDetails(this)">Show</button>
+            <div class="product-details">
+                <div class="bottom-align-div">
+                    <p class="product-title">College Project <hr></p>
+                    <p class="product-subtitle">Ingredients:</p>
+                    <ul class="details-ul">
+                        <li>Dragon Fruit extract</li>
+                        <li>Tea tree oil</li>
+                        <li>Coconut Oil</li>
+                        <li>Carbopol</li>
+                        <li>Glycerine</li>
+                        <li>Tween 20</li>
+                        <li>Potassium sorbate</li>
+                        <li>Dm Water</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="product-img" id="Internship">
+            <div id="image-text">
+                <p id="image-title-text">Tuton Pharmaceuticals</p>
+            </div>
+            <button class="show-button" onclick="toggleDetails(this)">Show</button>
+            <div class="product-details">
+                <div class="bottom-align-div">
+                    <p class="product-title">Internship <hr></p>
+                    <p class="product-subtitle">Details:</p>
+                    <ul class="details-ul">
+                        <li>Industrial Training of 30-days in QC and QA Department</li>
+                        <li>85, G I D C, Naroda, behind Pepsi Factory, Naroda, Ahmedabad, Gujarat 380030, India</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
     
-    
-    <hr id="contact-section-hr"  >
+    <hr>
      
     
     
-    <section class="contact-section">
+    <section id="contact">
       <div class="contact-contaner" style="position: relative; top: 0; left: 0; right: 0;">
         <div class="form-container">
            <div class="left-container">
@@ -242,7 +284,7 @@
       </div>
     </section>
     <hr class="line" >
-    <section id="thanks">
+    <section id="thanks" style="margin:0;">
    
      <div id="moving-text">
         <div class="con">
@@ -275,42 +317,30 @@
     </section>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        let locationtext = document.getElementById('location');
-        let locationdiv = document.getElementById('location-div');
-        let stand = document.getElementById('stand');
-        let isExpanded = false;
-    
-        document.getElementById('globec').addEventListener('click', function() {
-          if (isExpanded) {
-            locationtext.style.width = "0";
-            locationdiv.style.border = "none";
-            locationdiv.style.backgroundColor = "transparent";
-            stand.style.fill = "#523EE8";
-          } else {
-            locationtext.style.width = "8em";
-            locationdiv.style.backgroundColor = "#523EE8";
-            stand.style.fill = "white";
-          }
-          isExpanded = !isExpanded;
-        });
-      });
-    </script>
-    
+      function toggleDetails(button) {
+  var productImg = button.parentElement;
+  var productDetails = productImg.querySelector('.product-details');
+  var imagetext = productImg.querySelector('#image-title-text');
+
+  productDetails.style.top = productDetails.style.top === '0%' ? '100%' : '0%';
+  imagetext.style.opacity = imagetext.style.opacity === '0' ? '1' : '0';
+}
+
+  </script> 
  
 <script>
   var lastScrollTop = 0
-navbar = document.getElementById("navbar")
-window.addEventListener("scroll", function() {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-80px"
-    } else {
-        navbar.style.top = "7vh"
+  navbar = document.getElementById("navbar")
+  window.addEventListener("scroll", function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      if (scrollTop > lastScrollTop) {
+          navbar.style.top = "-80px"
+      } else {
+          navbar.style.top = "7vh"
 
-    }
-    lastScrollTop = scrollTop
-})
+      }
+      lastScrollTop = scrollTop
+  })
  
 
 // Initial call to start the smooth scrolling
@@ -318,26 +348,19 @@ smoothScroll();
 
 </script>
 <script>
+  var audio = document.getElementById('audioval');
+  var button = document.getElementById('bounce');
 
-function codeAddress() {
-  document.getElementById("bounce").style.animation = "paused";
-}
-window.onload = codeAddress;
-
-function Play()
-      {
-        var myAudio = document.getElementById("audioval");
-        if(myAudio.paused) {
-            myAudio.play();
-            bounce.style.animation = "";
-         
-        }
-        else {
-           myAudio.pause();
-           document.getElementById("bounce").style.animation = "paused";
-        }
-      }
-
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      button.classList.add('bounce-animation', 'play-border');
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      button.classList.remove('bounce-animation', 'play-border');
+    }
+  }
 </script>
 <script>
     AOS.init(
