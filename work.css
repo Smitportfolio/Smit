@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.main-box {
+  display: flex;
+  align-items: center;
+ justify-content: center;
+ margin: 1rem auto;
+}
+@media(max-width: 1050px){
+.main-box{
+  display: flex;
+ flex-direction: column;
+ width: 100%;
+ float: left;
+ align-items: center;
+ justify-content: center;
+ gap: 2rem;
+}
+
+}
+.product-img {
+  position: relative;
+  width: 40vh;
+  height: 55vh;
+  min-width: 220px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 212, 255, 1) 100%);
+  margin-right: 20px;
+  border: none;
+  border-radius: 22px;
+  left: 0%;
+  background-color: blue;
+}
+
+.product-details {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 100%;
+  padding-left: 2rem;
+  left: 0;
+  border: none;
+  border-radius: 22px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: top 0.5s ease;
+}
+
+.show-button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+
+#dragonfruitproject,
+#Internship {
+  
+  background-size: cover;
+  background-position: center;
+  border-radius: 22px;
+}
+
+#dragonfruitproject {
+  background-image: url('dragon.png');
+}
+
+#Internship {
+  background-image: url('tuton.png');
+}
+
+#dragonfruitproject .details-ul>li {
+  font-size: 10pt;
+  
+}
+#Internship .details-ul>li {
+  font-size: 10pt;
+  margin-bottom: 1rem;
+}
+
+#Internship .details-ul {
+  padding-right: 0.5rem;
+}
+
+.details-ul {
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+}
+
+.details-ul li {
+  margin-bottom: 0.2rem;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-top: 2.8vh;
+  font-weight: 600;
+  width: fit-content;
+  color: #ffffff;
+}
+
+.product-subtitle {
+  font-size: 1rem;
+  margin-top: 2vh;
+  color: white;
+}
+
+.grade {
+  background-color: #0027eb;
+  border-radius: 12px 0px 0px 12px;
+  padding-left: 4vh;
+  margin-top: 1.5vh;
+  color: white;
+}
+
+#image-text {
+  font-size: 2rem;
+  position: absolute;
+  width: 100%;
+  border-radius: 22px;
+  align-self: baseline;
+  display: flex;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 212, 255, 1) 100%);
+  bottom: 0%;
+  text-shadow: 1px 1px black;
+  line-height: 50px;
+}
+
+#image-title-text {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+#image-text p {
+  align-self: flex-end;
+  padding-left: 10%;
+  font-size: 1rem;
+  color: white;
+}
+
+.bottom-align-div {
+  margin-top: auto;
+  height: fit-content;
+}
