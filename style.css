@@ -194,6 +194,7 @@ h1{
   display: flex;
   margin: 1rem 0;
   height: 50px;
+  overflow: hidden;
   flex-direction: row;
 }
 
