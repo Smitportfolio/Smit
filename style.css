@@ -4,11 +4,20 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+    scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
 body{
-	 overscroll-behavior: none;
+  overscroll-behavior: none;
+}
+section{
+  margin: 0 8vw;
+}
+@media (hover: none) {
+  /* Your touch-specific styles go here */
+  section {
+    margin: 0vw 8vw;
+  }
 }
 #navbar {
     position: fixed;
@@ -93,10 +102,36 @@ body{
   }
 }
 
-#bounce{
-  animation: bounce 1s infinite alternate;
-  -webkit-animation: bounce 1s infinite alternate;
-  margin-right:5px;
+#bounce {
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent; /* Initial border style */
+  margin: 2px 3px 2px 0;
+}
+#music-sign{
+  color: #ff00dd; 
+  font-size: 15px; 
+  background-color: white; 
+  padding: 9px;
+
+  border-radius: 50%;
+}
+#audioval {
+  display: none;
+  outline: none;
+  border: none;
+}
+
+#bounce.bounce-animation {
+  animation: bounce 0.8s alternate infinite;
+}
+
+#bounce.play-border {
+  border: 2px solid aqua;
 }
 @keyframes bounce {
   from {
@@ -106,14 +141,7 @@ body{
     transform: translateY(-15px);
   }
 }
-@-webkit-keyframes bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-15px);
-  }
-}
+
 .section-title{
   font-size: 4vh;
   color: #523ee8;
@@ -125,7 +153,7 @@ body{
   justify-content: space-between; */
   display: grid;
   grid-template-columns: auto auto;
-  margin: 8vh 0 0 8vw;
+  
   height: 100vh;
   padding-top: 16vh;
 
@@ -195,8 +223,8 @@ h1{
 .buttons-raw {
   display: flex;
   margin: 1rem 0;
-  height: 50px;
   overflow: hidden;
+  height: 50px;
   flex-direction: row;
 }
 
@@ -375,7 +403,7 @@ h1{
 }
 
 .contact-section{
-  display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -412,11 +440,16 @@ margin-bottom:1rem;
 display:flex;
 margin: 20px 3vh;
 width: 95%;
-/* From https://css.glass */
 background: rgba(53, 53, 53, 0.11);
 border-radius: 10px;
 }
-
+@media(max-width: 850px){
+  .form-container{
+    margin: 20px 0vh;
+    width: 100%;
+  
+  }
+  }
 .left-container {
 flex:1;
 height:480px;
@@ -458,7 +491,7 @@ text-align:center;
 
 @media(max-width: 700px){
 .right-inner-container {
-width: 85%;
+width: 90%;
 
 }
 }
@@ -853,8 +886,6 @@ li span {
   }
 }
 #skills-section{
-  margin-left: 8vw;
-  margin-right: 8vw;
 
 }
 
@@ -882,7 +913,7 @@ li span {
   border: 0.2rem solid #523EE8;
   border-radius: 22px;
   container-type: inline-size;
-  
+
   border-radius: 1rem;
   color: hsl(0 0% 10%);
   background: none;
